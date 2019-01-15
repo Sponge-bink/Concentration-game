@@ -17,7 +17,13 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]!
     
-    lazy var game: Concentration = Concentration(numbersOfPairsOfCards: (cardButtons.count + 1) / 2)
+    lazy var game: Concentration = Concentration(numbersOfPairsOfCards: numberOfPairsOfCards)
+    
+    var numberOfPairsOfCards: Int {
+        // get {
+        return (cardButtons.count + 1) / 2
+        // }
+    }
     
     var flipCount = 0 {
         didSet {
