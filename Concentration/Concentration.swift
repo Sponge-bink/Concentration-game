@@ -48,6 +48,8 @@ class Concentration {
 //            cards[index].isFaceUp = true
 //        }
         
+        assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): Chosen index not in the cards!")
+        
         if !cards[index].isMatched {
             if let matchIndex = indexOfTheOneAndOnlyFaceUpCard, matchIndex != index {
                 // Check if the cards match
@@ -72,6 +74,8 @@ class Concentration {
     }
     
     init(numbersOfPairsOfCards: Int) {
+        assert(numbersOfPairsOfCards > 0, "Concentration.init(\(numbersOfPairsOfCards)): Number of pairs of card illegal!")
+
         for _ in 0..<numbersOfPairsOfCards {
             let card = Card()
             cards += [card, card]
