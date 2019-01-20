@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Concentration {
+struct Concentration {
     var cards = [Card]()
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int? {
@@ -42,7 +42,7 @@ class Concentration {
         }
     }
     
-    func chooseCard(at index: Int) {
+    mutating func chooseCard(at index: Int) {
 //        if cards[index].isFaceUp {
         
 //            cards[index].isFaceUp = true
