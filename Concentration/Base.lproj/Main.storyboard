@@ -15,7 +15,7 @@
         <scene sceneID="jUG-Lu-IYC">
             <objects>
                 <viewController id="a5t-g6-Pn3" customClass="ConcentrationThemeChooserViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="2cw-6o-xvW">
+                    <view key="view" contentMode="scaleToFill" id="2cw-6o-xvW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5k-MF-adM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="393"/>
+            <point key="canvasLocation" x="-68" y="438"/>
         </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -381,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="1362"/>
+            <point key="canvasLocation" x="-68" y="1152"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="4OB-2G-Qdk">
@@ -397,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5Y-8W-wSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302" y="2669"/>
+            <point key="canvasLocation" x="-653" y="1933"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Xh5-qu-9YR">
@@ -413,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ea-0Y-MgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1109" y="2061"/>
+            <point key="canvasLocation" x="-1374" y="1933"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bjM-wa-PBY">
