@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ConcentrationViewController: UIViewController {
+class ConcentrationViewController: VCLLoggingViewController {
+    
+    override var vclLoggingName: String {
+        return "Game"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
