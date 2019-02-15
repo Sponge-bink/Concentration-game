@@ -19,6 +19,17 @@ class ConcentrationViewController: VCLLoggingViewController {
         self.becomeFirstResponder()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateViewFromModel()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        flipCountLabel.text = traitCollection.verticalSizeClass == .compact ? "Flips:\n\(flipCount)" : "Flips: \(flipCount)"
+    }
+    
     override var canBecomeFirstResponder: Bool {
         get {
             return true
@@ -32,18 +43,22 @@ class ConcentrationViewController: VCLLoggingViewController {
     
     @IBOutlet private var cardButtons: [UIButton]!
     
+    private var  visibleCardButtons: [UIButton]! {
+        return cardButtons?.filter { !$0.superview!.isHidden }
+    }
+    
     @IBOutlet private weak var flipCountLabel: UILabel!
     
     @IBAction private func touchCard(_ sender: UIButton) {
         // flipCard(withemoji: "🎃", on: sender)
         if sender.currentTitle == "" || sender.currentTitle == nil {
-            if let cardNumberforCount = cardButtons.index(of: sender) {
+            if let cardNumberforCount = visibleCardButtons.index(of: sender) {
                 if game.cards[cardNumberforCount].isMatched == false {
                     flipCount += 1
                 }
             }
         }
-        if let cardNumber = cardButtons.index(of: sender) {
+        if let cardNumber = visibleCardButtons.index(of: sender) {
             // print("cardnumber = \(cardNumber)")
             // flipCard(withemoji: emojiChoices[cardNumber], on: sender)
             game.chooseCard(at: cardNumber)
@@ -99,13 +114,15 @@ class ConcentrationViewController: VCLLoggingViewController {
     
     var numberOfPairsOfCards: Int {
         // get {
-        return (cardButtons.count + 1) / 2
+        return (visibleCardButtons.count + 1) / 2
         // }
     }
     
     private(set) var flipCount = 0 {
         didSet {
-            flipCountLabel.text = "Flips: \(flipCount)"
+            if let textToSet: String? = traitCollection.verticalSizeClass == .compact ? "Flips:\n\(flipCount)" : "Flips: \(flipCount)" {
+                flipCountLabel.text = textToSet
+            }
         }
     }
 
@@ -127,9 +144,9 @@ class ConcentrationViewController: VCLLoggingViewController {
     
     private func updateViewFromModel() {
         // for index in 0..<cardButtons.count{
-        if cardButtons != nil {
-            for index in cardButtons.indices {
-                let button = cardButtons[index]
+        if visibleCardButtons != nil {
+            for index in visibleCardButtons.indices {
+                let button = visibleCardButtons[index]
                 let card = game.cards[index]
                 if card.isFaceUp {
                     button.setTitle(emoji(for: card), for: UIControl.State.normal)
