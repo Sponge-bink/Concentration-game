@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qCI-U7-Q0o">
-                                <rect key="frame" x="5" y="124" width="404" height="525"/>
+                                <rect key="frame" x="5" y="96" width="404" height="525"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bs8-G0-djg">
                                         <rect key="frame" x="0.0" y="0.0" width="404" height="80"/>
@@ -322,16 +322,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0h-LN-QXu">
-                                <rect key="frame" x="16" y="80" width="97" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="New Game">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="44U-aH-KpT"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3W-Tz-Be9">
                                 <rect key="frame" x="130" y="753" width="154" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -341,13 +331,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qCI-U7-Q0o" secondAttribute="trailing" constant="5" id="B0L-cr-yrK"/>
-                            <constraint firstItem="U0h-LN-QXu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="80" id="DBX-lx-U1M"/>
-                            <constraint firstItem="U0h-LN-QXu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="HzA-Bb-ilf"/>
+                            <constraint firstItem="qCI-U7-Q0o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Ma0-XG-AlP"/>
                             <constraint firstItem="qCI-U7-Q0o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="PcI-qp-cs3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U0h-LN-QXu" secondAttribute="trailing" symbolic="YES" id="SZS-gf-nWb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o3W-Tz-Be9" secondAttribute="bottom" id="VKs-Bu-wMQ"/>
                             <constraint firstItem="o3W-Tz-Be9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azH-0Q-NM5"/>
-                            <constraint firstItem="qCI-U7-Q0o" firstAttribute="top" secondItem="U0h-LN-QXu" secondAttribute="bottom" constant="8" id="qST-5a-B3O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

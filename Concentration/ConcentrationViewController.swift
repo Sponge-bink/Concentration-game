@@ -16,7 +16,18 @@ class ConcentrationViewController: VCLLoggingViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.becomeFirstResponder()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            newGame()
+        }
     }
     
     @IBOutlet private var cardButtons: [UIButton]!
@@ -46,7 +57,7 @@ class ConcentrationViewController: VCLLoggingViewController {
     //        flipCount += 1
     //    }
     
-    @IBAction private func newGame(_ sender: UIButton) {
+    private func newGame() {
         flipCount = 0
         
         for button in cardButtons {
